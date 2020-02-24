@@ -2,4 +2,4 @@
 
 ## Instalação 
 
-npm i alemetheus
+'npm i alemetheus'
