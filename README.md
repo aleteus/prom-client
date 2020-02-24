@@ -34,7 +34,7 @@ O start irá pegar exatamente o momento do processamento e será enviado ao push
 
 #### Informações adicionais
 
-A forma que usamos para enviar informações adicionais para o Pushgateway(O qual leva as informações/métircas para o Prometheus) é criando um objeto chamado de 'parameters' que funciona como um transporte de informações e essas serão transportadas da seguinte forma:
+A forma que usamos para enviar informações adicionais para o [Pushgateway] (https://github.com/prometheus/pushgateway)(O qual leva as informações/métircas para o Prometheus) é criando um objeto chamado de 'parameters' que funciona como um transporte de informações e essas serão transportadas da seguinte forma:
 
 ```js
 parameters = {
