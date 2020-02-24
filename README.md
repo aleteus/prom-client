@@ -12,19 +12,45 @@ No início do código declaramos o pacote que iremos utilizar:
 const client = require('alemetheus');
 ```
 
-Após declarar o pacote, criaremos o client do Prometheus para a criação das métricas e exportar as informações de acordo com as configuraçes desejadas. Lembrando que 
+Após declarar o pacote, criaremos o client do Prometheus para a criação das métricas e exportar as informações de acordo com as configuraçes desejadas.
 
 ```js
 const prometheusClient = new client.Prometheus(process.env.PUSH_GATEWAY, 'nome_da_metrica', '','nome_do_produto',this.parameters,'(histogram, summary, gauge, counter)', 'nome_da_aplicação' );
 ```
 
-## 
+## Aplicando o Prometheus
+
+Um dos focos de se monitorar aplicações, é buscar o tempo de processamento de algum evento, ou de algum método, função e etc. Isso pode ser feito de uma maneira bem simples:
+
+```js
+const qualquerMetodo = {
+							let start = new Date();
+							var1 + var2 = var3;
+						}
+					  prometheusClient.pushGateway(start);
+
+```
+O start irá pegar exatamente o momento do processamento e será enviado ao pushGateway e lá fará um calculo para trazer em milisegundos o tempo de processamento e enviá-lo ao Prometheus.
+
+#### Informaçes adicionais
+
+A forma que usamos para enviar informações adicionais para o Pushgateway(O qual leva as informaçes/métircas para o Prometheus) é criando um objeto chamado de 'parameters' que funciona como um transporte de informaões e essas informações são transportadas da seguinte forma:
+
+```js
+parameters = {
+							var1 = a;
+							var2 = b;
+							var3 = c;
+							var4 = d;
+						}
+						prometheusClient.pushGateway(parameters);
+```
 
 ## Tipos de métricas
 
 ### Counter
 
-'Counters' tem a utilidade de seu próprio significado, simplesmente um contado, o qual se reinicia no final do processo.
+'Counters' tem a utilidade de seu próprio significado, simplesmente um contador, o qual se reinicia no final do processo.
 
 ```js
 const client = require('alemetheus');
