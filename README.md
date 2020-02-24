@@ -24,12 +24,12 @@ Um dos focos de se monitorar aplicações, é buscar o tempo de processamento de
 
 ```js
 const qualquerMetodo = {
-							let start = new Date();
-							var1 + var2 = var3;
-						}
-					  prometheusClient.pushGateway(start);
-
+	let start = new Date();
+	var1 + var2 = var3;
+	}
+        prometheusClient.pushGateway(start);
 ```
+
 O start irá pegar exatamente o momento do processamento e será enviado ao pushGateway e lá fará um calculo para trazer em milisegundos o tempo de processamento e enviá-lo ao Prometheus.
 
 #### Informaçes adicionais
@@ -38,12 +38,12 @@ A forma que usamos para enviar informações adicionais para o Pushgateway(O qua
 
 ```js
 parameters = {
-							var1 = a;
-							var2 = b;
-							var3 = c;
-							var4 = d;
-						}
-						prometheusClient.pushGateway(parameters);
+	var1 = a;
+	var2 = b;
+	var3 = c;
+	var4 = d;
+	}
+	prometheusClient.pushGateway(parameters);
 ```
 
 ## Tipos de métricas
