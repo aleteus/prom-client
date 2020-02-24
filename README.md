@@ -30,11 +30,11 @@ const qualquerMetodo = {
         prometheusClient.pushGateway(start);
 ```
 
-O start irá pegar exatamente o momento do processamento e será enviado ao pushGateway e lá fará um calculo para trazer em milisegundos o tempo de processamento e enviá-lo ao Prometheus.
+O start irá pegar exatamente o momento do processamento e será enviado ao pushGateway e lá fará um cálculo para trazer em milisegundos o tempo de processamento e enviá-lo ao Prometheus.
 
-#### Informaçes adicionais
+#### Informações adicionais
 
-A forma que usamos para enviar informações adicionais para o Pushgateway(O qual leva as informaçes/métircas para o Prometheus) é criando um objeto chamado de 'parameters' que funciona como um transporte de informaões e essas informações são transportadas da seguinte forma:
+A forma que usamos para enviar informações adicionais para o Pushgateway(O qual leva as informações/métircas para o Prometheus) é criando um objeto chamado de 'parameters' que funciona como um transporte de informações e essas serão transportadas da seguinte forma:
 
 ```js
 parameters = {
