@@ -91,7 +91,7 @@ histogram.observe(10); // Observa o valor no 'histogram'
 
 ### Summary
 
-Summaries calculam a porcentagem de valorem em observação.
+Summaries calculam a porcentagem de valores em observação.
 
 ```js
 const client = require('alemetheus');
