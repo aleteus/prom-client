@@ -5,9 +5,20 @@
 ```npm i alemetheus```
 
 ## Implementando
+
+No início do código declaramos o pacote que iremos utilizar:
+
 ```js
-const prometheusClient = new client.Prometheus(process.env.PUSH_GATEWAY, 'pointer_api_fast', '','SMS',this.parameters,'histogram', 'api_fast' );
+const client = require('alemetheus');
 ```
+
+Após declarar o pacote, criaremos o client do Prometheus para a criação das métricas e exportar as informações de acordo com as configuraçes desejadas. Lembrando que 
+
+```js
+const prometheusClient = new client.Prometheus(process.env.PUSH_GATEWAY, 'nome_da_metrica', '','nome_do_produto',this.parameters,'(histogram, summary, gauge, counter)', 'nome_da_aplicação' );
+```
+
+## 
 
 ## Tipos de métricas
 
