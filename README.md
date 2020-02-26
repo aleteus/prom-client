@@ -15,47 +15,26 @@ const client = require('alemetheus');
 Após declarar o pacote, criaremos o client do Prometheus para a criação das métricas e exportar as informações de acordo com as configuraçes desejadas.
 
 ```js
-const prometheusClient = new client.Prometheus(process.env.PUSH_GATEWAY, 'nome_da_metrica', '','produto',this.parameters,'(histogram, summary, gauge, counter)', 'nome da aplicação' );
+const prometheusClient = new client.Prometheus(process.env.PUSH_GATEWAY, 'nome_da_metrica', '','produto',parameters = {
+	var1 = a;
+	var2 = b;
+	var3 = c;
+	var4 = d;
+	},'(histogram, summary, gauge, counter)', 'nome da aplicação' );
 ```
-#### Obs: O 'this.parameters' envia o objeto criado como em um dos exemplos a baixo. 
 
 ## Aplicando o Prometheus
 
 Um dos focos de se monitorar aplicações, é buscar o tempo de processamento de algum evento, ou de algum método, função e etc. Isso pode ser feito de uma maneira bem simples:
 
-#### Tempo de processamento (start) 
+# Exemplo
+
+Resumindo: o ```start``` sempre será declarado como  um ```new Date()``` para pegar o momento do início do processo e enviar este valor ao Prometheus para que este calcule o tempo e gere um valor. O ```parameters``` sempre será um objeto o qual pode receber variáveis (```var1, var2, etc.```) com informações de acordo com a necessidade do monitoramento do código.  
 
 ```js
 const qualquerMetodo = {
 	let start = new Date();
-	var1 + var2 = var3;
-	}
-        prometheusClient.pushGateway(start);
-```
-
-O ```start``` irá pegar exatamente o momento do processamento e será enviado ao ```pushGateway``` e lá fará um cálculo para trazer em milisegundos o tempo de processamento e enviá-lo ao Prometheus.
-
-#### Informações adicionais (parameters)
-
-A forma que usamos para enviar informações adicionais para o Pushgateway(O qual leva as informações/métircas para o Prometheus) é criando um objeto chamado de 'parameters' que funciona como um transporte de informações e essas serão transportadas da seguinte forma:
-
-```js
-parameters = {
-	var1 = a;
-	var2 = b;
-	var3 = c;
-	var4 = d;
-	}
-	prometheusClient.pushGateway(parameters);
-```
-# Exemplo final
-
-Resumindo: o ```start``` sempre declarado como  um ```new Date()``` para pegar a data e horário do processamento e enviar este valor ao Prometheus para que este calcule o tempo e gere um valor. O ```parameters``` sempre será um objeto o qual pode receber variáveis (```var1, var2, etc.```) com informações de acordo com a necessidade do monitoramento do código.  
-
-```js
-const qualquerMetodo = {
-	let start = new Date();
-	var1 + var2 = var3;
+	x + y = 5;
 	parameters = {
 	var1 = a;
 	var2 = b;
