@@ -33,7 +33,7 @@ const qualquerMetodo = {
         prometheusClient.pushGateway(start);
 ```
 
-O start irá pegar exatamente o momento do processamento e será enviado ao pushGateway e lá fará um cálculo para trazer em milisegundos o tempo de processamento e enviá-lo ao Prometheus.
+O ```start``` irá pegar exatamente o momento do processamento e será enviado ao pushGateway e lá fará um cálculo para trazer em milisegundos o tempo de processamento e enviá-lo ao Prometheus.
 
 #### Informações adicionais (parameters)
 
