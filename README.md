@@ -15,12 +15,10 @@ const client = require('alemetheus');
 Após declarar o pacote, criaremos o client do Prometheus para a criação das métricas e exportar as informações de acordo com as configuraçes desejadas.
 
 ```js
-const prometheusClient = new client.Prometheus(process.env.PUSH_GATEWAY, 'nome_da_metrica', '','nome_do_produto',this.parameters,'(histogram, summary, gauge, counter)', 'nome_da_aplicação' );
+const prometheusClient = new client.Prometheus(process.env.PUSH_GATEWAY, 'nome_da_metrica', '','produto',this.parameters,'(histogram, summary, gauge, counter)', 'nome da aplicação' );
 ```
 
 ## Aplicando o Prometheus
-
-### Prometheus: https://prometheus.io/
 
 Um dos focos de se monitorar aplicações, é buscar o tempo de processamento de algum evento, ou de algum método, função e etc. Isso pode ser feito de uma maneira bem simples:
 
@@ -37,8 +35,6 @@ O start irá pegar exatamente o momento do processamento e será enviado ao push
 #### Informações adicionais
 
 A forma que usamos para enviar informações adicionais para o Pushgateway(O qual leva as informações/métircas para o Prometheus) é criando um objeto chamado de 'parameters' que funciona como um transporte de informações e essas serão transportadas da seguinte forma:
-
-### Pushgateway: https://github.com/prometheus/pushgateway
 
 ```js
 parameters = {
@@ -105,3 +101,5 @@ new client.Summary({
   percentiles: [0.01, 0.1, 0.9, 0.99]
 });
 ```
+### Prometheus: https://prometheus.io/
+### Pushgateway: https://github.com/prometheus/pushgateway
