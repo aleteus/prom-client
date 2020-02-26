@@ -66,7 +66,7 @@ const qualquerMetodo = {
 }
 ```
 
-## Tipos de métricas
+# Tipos de métricas
 
 ### Counter
 
