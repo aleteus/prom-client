@@ -33,7 +33,7 @@ const qualquerMetodo = {
         prometheusClient.pushGateway(start);
 ```
 
-O ```start``` irá pegar exatamente o momento do processamento e será enviado ao pushGateway e lá fará um cálculo para trazer em milisegundos o tempo de processamento e enviá-lo ao Prometheus.
+O ```start``` irá pegar exatamente o momento do processamento e será enviado ao ```pushGateway``` e lá fará um cálculo para trazer em milisegundos o tempo de processamento e enviá-lo ao Prometheus.
 
 #### Informações adicionais (parameters)
 
@@ -50,7 +50,7 @@ parameters = {
 ```
 # Exemplo final
 
-Resumindo: o ```start``` sempre declarado como  um ```new Date()``` para pegar a data e horário do processamento e enviar este valor ao Prometheus para que este calcule o tempo e gere um valor. O parameters sempre será um objeto o qual pode receber variáveis(var1, var2, etc.) com informações de acordo com a necessidade do monitoramento do código.  
+Resumindo: o ```start``` sempre declarado como  um ```new Date()``` para pegar a data e horário do processamento e enviar este valor ao Prometheus para que este calcule o tempo e gere um valor. O ```parameters``` sempre será um objeto o qual pode receber variáveis (```var1, var2, etc.```) com informações de acordo com a necessidade do monitoramento do código.  
 
 ```js
 const qualquerMetodo = {
