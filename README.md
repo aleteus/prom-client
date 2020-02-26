@@ -48,7 +48,7 @@ parameters = {
 	}
 	prometheusClient.pushGateway(parameters);
 ```
-### Exemplo final
+# Exemplo final
 
 Resumindo: o 'start' sempre declarado como  um 'new Date()' para pegar a data e horário do processamento e enviar este valor ao Prometheus para que este calcule o tempo e gere um valor. O parameters sempre será um objeto o qual pode receber variáveis com informaçes de acordo com a necessidade do monitoramento do código.  
 
