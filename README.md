@@ -41,7 +41,7 @@ const qualquerMetodo = {
 	var3 = c;
 	var4 = d;
 	}
-	prometheusClient.pushGateway(start, parameters);
+	prometheusClient.pushGateway(start, parameters, var5); //var5: este terceiro parametro obrigatório, mas pode ser passado qualquer valor. 
 }
 ```
 
